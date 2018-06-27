@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">JournalApp</string>
+
+    <string name="dummy">As I mentioned earlier, the createCircularReveal() method only
+        works on LOLLIPOP and newer Android version, so this function has a TargetApi for build version LOLLIPOP.
+        This means this function will not be called when fired up in a pre-LOLLIPOP device.</string>
+    <string name="action_settings">Settings</string>
+</resources>
