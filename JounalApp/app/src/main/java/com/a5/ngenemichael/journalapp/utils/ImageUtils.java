@@ -15,12 +15,12 @@ public class ImageUtils extends BaseAdapter {
 
     private static Context mContext;
 
-    public ImageUtils(Context context){
+    public ImageUtils(Context context) {
         mContext = context;
     }
 
-    private static final int []icons =
-        {
+    private static final int[] icons =
+            {
                     R.drawable.ill,
                     R.drawable.happy,
                     R.drawable.sad,
@@ -32,10 +32,10 @@ public class ImageUtils extends BaseAdapter {
                     R.drawable.quiet,
                     R.drawable.ninja
 
-    };
+            };
 
 
-    private static String []icon_name = {"Ill",
+    private static String[] icon_name = {"Ill",
             "Happy",
             "Sad",
             "Angry",
@@ -45,7 +45,7 @@ public class ImageUtils extends BaseAdapter {
             "Surprised",
             "Quiet",
             "Ninja"
-         };
+    };
 
     public static int[] getIcons() {
         return icons;
@@ -74,21 +74,20 @@ public class ImageUtils extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         ImageView imageView;
 
-        if(view == null){
+        if (view == null) {
             imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(60,60));
+            imageView.setLayoutParams(new GridView.LayoutParams(75, 75));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setPadding(2,2,2,2);
-        }
-        else {
+            imageView.setPadding(1, 1, 1, 1);
+        } else {
             imageView = (ImageView) view;
         }
         imageView.setImageResource(icons[i]);
         return imageView;
-        }
+    }
 
-        public  int getSingleImage(int position){
+    public int getSingleImage(int position) {
         return getIcons()[position];
-        }
+    }
 
 }

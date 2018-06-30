@@ -18,44 +18,43 @@ import com.google.firebase.auth.FirebaseUser;
 public class FirebaseUtils {
 
 
-    private  static FirebaseAuth firebaseAuth;
-    private static  FirebaseAuth.AuthStateListener  authStateListener;
+    private static FirebaseAuth firebaseAuth;
+    private static FirebaseAuth.AuthStateListener authStateListener;
     private static String userName;
     private static String email;
     private static Uri image_uri;
     private static Context mContext;
 
 
-
-    public FirebaseUtils(Context context){
+    public FirebaseUtils(Context context) {
         mContext = context;
     }
 
-    public void logOutUser(){
+    public void logOutUser() {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseAuth.signOut();
-        mContext.startActivity(new Intent(mContext.getApplicationContext(),WelcomeActivity.class));
+        mContext.startActivity(new Intent(mContext.getApplicationContext(), WelcomeActivity.class));
         resetUser(mContext);
 
     }
 
 
-    public static void setUpUser(){
+    public static void setUpUser() {
 
         firebaseAuth = FirebaseAuth.getInstance();
-        final Intent intent = new Intent(mContext,WelcomeActivity.class);
+        final Intent intent = new Intent(mContext, WelcomeActivity.class);
 
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                if(user == null){
+                if (user == null) {
                     mContext.startActivity(intent);
                 }
             }
         };
 
-        final FirebaseUser user  = firebaseAuth.getCurrentUser();
+        final FirebaseUser user = firebaseAuth.getCurrentUser();
         assert user != null;
         userName = user.getDisplayName();
         email = user.getEmail();
@@ -63,12 +62,11 @@ public class FirebaseUtils {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(mContext);
         SharedPreferences.Editor editor = sp.edit();
 
-        editor.putString(mContext.getString(R.string.pref_user_name_key),userName);
+        editor.putString(mContext.getString(R.string.pref_user_name_key), userName);
         editor.putString(mContext.getString(R.string.pref_user_email_key), email);
         editor.putString(mContext.getString(R.string.pref_user_image_key), image_uri.toString());
         editor.apply();
     }
-
 
 
     public static void resetUser(Context context) {
@@ -81,7 +79,7 @@ public class FirebaseUtils {
         editor.apply();
     }
 
-    public static Bundle getUserDetails(Context context){
+    public static Bundle getUserDetails(Context context) {
         Bundle bundle = new Bundle();
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
 
@@ -89,9 +87,9 @@ public class FirebaseUtils {
         String userEmail = context.getString(R.string.pref_user_email_key);
         String userImage = context.getString(R.string.pref_user_image_key);
 
-        bundle.putString(JournalContract.USER_NAME,sp.getString(userName,""));
-        bundle.putString(JournalContract.USER_EMAIL,sp.getString(userEmail,""));
-        bundle.putString(JournalContract.USER_IMAGE,sp.getString(userImage,""));
+        bundle.putString(JournalContract.USER_NAME, sp.getString(userName, ""));
+        bundle.putString(JournalContract.USER_EMAIL, sp.getString(userEmail, ""));
+        bundle.putString(JournalContract.USER_IMAGE, sp.getString(userImage, ""));
 
         return bundle;
     }
