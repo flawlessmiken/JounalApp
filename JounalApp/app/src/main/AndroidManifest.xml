@@ -2,24 +2,25 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.a5.ngenemichael.journalapp">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name=".WelcomeActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:name=".Activities.WelcomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".Activities.MainActivity">
         </activity>
 
         <provider
@@ -27,7 +28,14 @@
             android:authorities="com.a5.ngenemichael.journalapp"
             android:exported="false"/>
 
-        <activity android:name=".SettingActivity">
+        <activity android:name=".Activities.SettingActivity">
+        </activity>
+        <activity
+            android:name=".Activities.AddJournalActivity"
+            android:label="Add New Journal to Entry"
+            android:theme="@style/AddActivityTheme">
+        </activity>
+        <activity android:name=".Activities.SingleDisplayActivity">
         </activity>
     </application>
 

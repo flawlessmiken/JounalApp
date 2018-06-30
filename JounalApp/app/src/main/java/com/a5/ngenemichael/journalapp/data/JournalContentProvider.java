@@ -67,6 +67,22 @@ public class JournalContentProvider extends ContentProvider{
                         null,
                         sortOrder);
                 break;
+
+            case JOURNAL_WITH_ID:
+
+                String index = uri.getLastPathSegment();
+                String[] selectionArguments = new String[]{index};
+
+                retCursor = db.query(TABLE_NAME,
+                        projection,
+                        JournalContract.JournalEntry._ID + " = ? ",
+                        selectionArguments,
+                        null,
+                        null,
+                        sortOrder
+                        );
+
+                break;
             // Default exception
             default:
                 throw new UnsupportedOperationException("Unknown uri: " + uri);
@@ -150,6 +166,28 @@ public class JournalContentProvider extends ContentProvider{
 
     @Override
     public int update(@NonNull Uri uri, @Nullable ContentValues contentValues, @Nullable String s, @Nullable String[] strings) {
-        return 0;
+
+            final SQLiteDatabase database = mJournalDbHelper.getWritableDatabase();
+
+            int match = sUrimatcher.match(uri);
+
+            int journalUpdate;
+
+            switch (match){
+                case JOURNAL_WITH_ID:
+                    String id  = uri.getPathSegments().get(1);
+                    journalUpdate = database.update(TABLE_NAME,contentValues,"_id=?",new String[]{id});
+                    break;
+
+                default:
+                    throw new UnsupportedOperationException("Unknown uri:" + uri );
+            }
+
+            if(journalUpdate != 0){
+                getContext().getContentResolver().notifyChange(uri, null);
+            }
+
+
+        return journalUpdate;
     }
 }

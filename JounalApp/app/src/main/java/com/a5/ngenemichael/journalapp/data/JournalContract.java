@@ -12,6 +12,13 @@ public class JournalContract {
 
     public static final String JOURNAL_PATH = "journal";
 
+    public static final String USER_NAME = "user_name";
+    public static final String USER_EMAIL = "user_email";
+    public static final String USER_IMAGE = "user_image";
+
+
+
+
     public static class JournalEntry implements BaseColumns {
 
         public static final Uri CONTENT_URI =

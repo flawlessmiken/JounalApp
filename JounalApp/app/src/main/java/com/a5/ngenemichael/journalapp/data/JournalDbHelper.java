@@ -5,15 +5,13 @@ import com.a5.ngenemichael.journalapp.data.JournalContract.JournalEntry;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-/**
- * Created by Flawless on 6/25/2018.
- */
+
 
 public class JournalDbHelper extends SQLiteOpenHelper {
 
     private static  final String DATABASE_NAME = "journalDB.db";
 
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 6;
     public JournalDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -30,7 +28,7 @@ public class JournalDbHelper extends SQLiteOpenHelper {
 
         final String CREATE_TABLE = "CREATE TABLE " + JournalEntry.TABLE_NAME + " (" +
                 JournalEntry._ID            + " INTEGER PRIMARY KEY, "+
-                JournalEntry.DATE           + " INTEGER NOT NULL, " +
+                JournalEntry.DATE           + " TEXT NOT NULL, " +
                 JournalEntry.MOOD           + " INTEGER NOT NULL, "+
                 JournalEntry.TITLE          + " TEXT NOT NULL, " +
                 JournalEntry.DETAIL         + " TEXT NOT NULL);";

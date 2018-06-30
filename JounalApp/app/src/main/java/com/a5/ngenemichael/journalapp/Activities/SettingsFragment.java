@@ -1,4 +1,4 @@
-package com.a5.ngenemichael.journalapp;
+package com.a5.ngenemichael.journalapp.Activities;
 
 import android.os.Bundle;
 import android.support.v7.preference.PreferenceFragmentCompat;

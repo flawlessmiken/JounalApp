@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/action_delete"
+        android:orderInCategory="101"
+        android:title="Delete"
+        android:icon="@android:drawable/ic_menu_delete"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_share"
+        android:orderInCategory="102"
+        android:title="Share"
+        android:icon="@android:drawable/ic_menu_share"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/home"
+        android:orderInCategory="99"
+        android:title="Home"
+        android:icon="@drawable/ic_home"
+        app:showAsAction="ifRoom"/>
+
+
+    <item
+        android:id="@+id/action_logout"
+        android:icon="@android:drawable/ic_menu_set_as"
+        android:orderInCategory="103"
+        android:title="@string/sign_out"
+        app:showAsAction="never"/>
+
+</menu>

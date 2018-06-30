@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="5dp"
+    android:fitsSystemWindows="true"
+    tools:showIn="@layout/activity_add_journal"
+    tools:context="com.a5.ngenemichael.journalapp.Activities.AddJournalActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/backgroud"
+        android:layout_gravity="center|top"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="Add new Entry"
+            android:textColor="@color/backgroud"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="30sp"
+            android:layout_marginBottom="20dp"
+
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="30sp"
+                android:textColor="@android:color/white"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:text="Feeling:"
+                android:gravity="center"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/text_mood"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="30sp"
+                android:maxLines="1"
+                android:textColor="@color/colorAccent"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:text="happy"
+                android:gravity="center"
+                android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/image_main"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/happy"
+            />
+
+        </LinearLayout>
+
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:padding="5dp"
+            android:layout_marginEnd="10dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:paddingTop="5dp"
+                android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/title_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:maxLines="3"
+                android:hint="title"
+                android:inputType="text"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/colorAccent" />
+        </android.support.design.widget.TextInputLayout>
+
+
+
+            <EditText
+                android:id="@+id/detailAdd"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:hint="detail"
+                android:inputType="text"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/colorAccent" />
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <include layout="@layout/gridlayout"
+
+            />
+
+        <!-- Login Button -->
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:onClick="saveToEntry"
+            android:background="@color/colorAccent"
+            android:text="Save"
+            android:textColor="@android:color/black" />
+
+        <!-- Link to Login Screen -->
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
