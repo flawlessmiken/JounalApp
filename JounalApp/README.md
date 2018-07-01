@@ -6,7 +6,7 @@ List of  Previous Entries
 [Contribution guidelines for this project](https://github.com/flawlessmiken/JounalApp/blob/master/JounalApp/app/apk/single.png)
 A single Entry Display
 
-[Contribution guidelines for this project](JounalApp/JounalApp/app/apk/add.png)
+[Contribution guidelines for this project](https://github.com/flawlessmiken/JounalApp/blob/master/JounalApp/app/apk/add.png)
 Screen to Add a new Entry.
 
 
