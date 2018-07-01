@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:paddingBottom="5dp"
+    tools:context="com.a5.ngenemichael.journalapp.Activities.AddJournalActivity"
+    tools:showIn="@layout/activity_add_journal">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center|top"
+        android:background="@color/backgroud"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="Add new Entry"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="30sp"
+
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Feeling:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="30sp"/>
+
+            <TextView
+                android:id="@+id/text_mood"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="happy"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorAccent"
+                android:textSize="30sp"/>
+
+            <ImageView
+                android:id="@+id/image_main"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:src="@drawable/happy"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:padding="5dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="5dp">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/title_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="15dp"
+                    android:hint="title"
+                    android:inputType="text"
+                    android:maxLines="3"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/colorAccent"/>
+            </android.support.design.widget.TextInputLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:padding="5dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="5dp">
+
+            <EditText
+                android:id="@+id/detailAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginStart="15dp"
+                android:hint="detail"
+                android:inputType="text"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/colorAccent"/>
+
+        </android.support.v7.widget.CardView>
+
+                <Button
+                    android:id="@+id/btn_save"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dip"
+                    android:background="@color/colorAccent"
+                    android:onClick="saveToEntry"
+                    android:text="Save"
+                    android:textColor="@android:color/black"/>
+
+            </LinearLayout>
+
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:padding="5dp"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="5dp">
+
+            <include layout="@layout/gridlayout"/>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
